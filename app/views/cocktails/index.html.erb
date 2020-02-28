@@ -1,8 +1,36 @@
-<ul>
-  <% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="cards">
+            <% @cocktails.each do |cocktail| %>
 
-<%= link_to "Add a cocktail", new_cocktail_path, class: 'btn btn-primary' %>
+              <div class="card-product">
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo.attached? ? (cl_image_path cocktail.photo.key, height: 120, width: 120, crop: :fill) : cl_image_path('lgabbdo1fiyg17218zok')%>)">
+                </div>
+                <div class="card-product-infos">
+                  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+                  <p>Product description with <strong>relevant info</strong> only.</p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+          <!-- <%= cl_image_tag("lgpgiorcfuqlhefugktz",
+                width: 400, height: 300, crop: :fill) %>
+           -->
+
+          <%= link_to "Add a cocktail", new_cocktail_path, class: 'btn btn-primary' %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 

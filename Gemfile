@@ -19,6 +19,7 @@ gem 'webpacker'
 # gem 'mini_racer', platforms: :ruby
 #Cloudinary
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
